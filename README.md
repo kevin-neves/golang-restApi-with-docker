@@ -8,7 +8,7 @@ My main goal with this project was to learn how to integrate a Gin project with 
 * [Gorm](https://gorm.io/)
 
 ### Project folder structure
-Our project entry point is in **cmd/main.go**.
+The project entry point is in **cmd/main.go**.
 
 ```
 .
