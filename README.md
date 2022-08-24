@@ -13,7 +13,7 @@ Our project entry point is in **cmd/main.go**.
 ```
 .
 └── project/
-    ├── cmd/
+    ├── cmd
     │   └── main.go
     ├── out/
     │   └── "final app"
@@ -41,6 +41,44 @@ Our project entry point is in **cmd/main.go**.
     └── README.md
 ```
 
+### The Dockerfile
+
+Following best practices, I've created the server's Dockerfile to be ran in two steps:
+
+1. Create an image, copying the project's files and building the server application
+2. Create a fresh Alpine Linux image and copying the builded project into it.
+
+```
+## Dockerfile
+FROM golang:1.19-alpine AS build_base
+
+RUN apk add --no-cache git
+RUN apk add --update make
+
+WORKDIR /tmp/golang-restApi-with-docker
+
+COPY go.mod .
+COPY go.sum .
+
+RUN go mod download
+
+COPY . .
+
+RUN make build
+
+# Create a new fresh image, and optmize the size of the application
+FROM alpine:3.9
+RUN apk add ca-certificates
+
+COPY --from=build_base /tmp/golang-restApi-with-docker/out/golang-restApi-with-docker /app/golang-restApi-with-docker
+
+EXPOSE 8080
+
+CMD ["./app/golang-restApi-with-docker"]
+```
+
+That way, the final container created by the image has approximately 27 MB.
+
 ### Prerequisites
 
 - [X] make
@@ -49,7 +87,7 @@ Our project entry point is in **cmd/main.go**.
 
 You also need to create a .**env** file at the root directory with some configurations to be loaded when the Docker Compose run, specially **user** and **password** to create the Database. See the following example:
 ```
-# .env
+## .env
 # Server configuration
 PORT=":8080"
 DB_URL="postgres://USER:PASSOWRD@db:5432/postgres"
