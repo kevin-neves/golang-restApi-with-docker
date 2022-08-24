@@ -122,8 +122,8 @@ CONTAINER ID   IMAGE                      COMMAND                  CREATED      
 
 | Method | Endpoint | Description |
 | ----------- | ----------- | ----------- |
-| GET | "/profiles/" | Get all the profiles |
-| GET | "/profiles/:id" | Get profile by ID |
-| POST | "/profiles/" | Create new profile |
-| PUT | "/profiles/:id" | Update and existing profile |
-| DELETE | "/profiles/:id" | Delete the profile using ID |
+| `GET` | "/profiles/" | Get all the profiles |
+| `GET` | "/profiles/:id" | Get profile by ID |
+| `POST` | "/profiles/" | Create new profile |
+| `PUT` | "/profiles/:id" | Update and existing profile |
+| `DELETE` | "/profiles/:id" | Delete the profile using ID |
