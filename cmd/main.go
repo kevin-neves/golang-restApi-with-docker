@@ -11,7 +11,7 @@ import (
 
 func main() {
 	if os.Getenv("MODE") != "production" {
-		env.GetEnvVar("../.env")
+		env.GetEnvVar(".env")
 	}
 
 	port := os.Getenv("PORT")

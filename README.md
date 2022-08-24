@@ -1,7 +1,7 @@
 # Golang REST Api with Postgres and Docker
 This is a simple Go Api that exposes only one endpoint `/profiles`. 
 
-My main goal with this project was to learn how to integrate a Gin project with Postgres database and run them together using Docker Compose. I've used Gorm package since it's a great ORM library write in Go, that implements [Pgx](https://github.com/jackc/pgx) driver for postgres.
+My main goal with this project was to learn how to integrate a Gin project with Postgres database and run them together using Docker Compose. I've used Gorm package since it's a great ORM library writed in Go, that implements [Pgx](https://github.com/jackc/pgx) driver for postgres.
 
 ### Packages used in this project
 * [Gin](https://github.com/gin-gonic/gin)
