@@ -8,7 +8,7 @@ My main goal with this project was to learn how to integrate a Gin project with 
 * [Gorm](https://gorm.io/)
 
 ### Project folder structure
-Our project entry point is in `cmd/main.go`.
+Our project entry point is in **cmd/main.go**.
 
 ```
 .
@@ -47,6 +47,20 @@ Our project entry point is in `cmd/main.go`.
 - [x] [docker](https://docs.docker.com/engine/install/)
 - [x] [docker-compose](https://docs.docker.com/compose/install/)
 
+You also need to create a .**env** file at the root directory with some configurations to be loaded when the Docker Compose run, specially **user** and **password** to create the Database. See the following example:
+```
+# .env
+# Server configuration
+PORT=":8080"
+DB_URL="postgres://USER:PASSOWRD@db:5432/postgres"
+
+# DataBase configuration
+POSTGRES_USER="USER"
+POSTGRES_PASSWORD="PASSOWRD"
+```
+The same USER and PASSWORD you use for postgres needs to inserted into the **DB_URL** variable.
+
+
 ### Running the project
 
 Running using make:
@@ -66,3 +80,12 @@ CONTAINER ID   IMAGE                      COMMAND                  CREATED      
 4a8bbd2b9e99   postgres:14.5-alpine3.16   "docker-entrypoint.s…"   56 minutes ago   Up 7 seconds   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp                                                                                                                 
 ```
 
+### Endpoints
+
+| Method | Endpoint | Description |
+| ----------- | ----------- | ----------- |
+| GET | "/profiles/" | Get all the profiles |
+| GET | "/profiles/:id" | Get profile by ID |
+| POST | "/profiles/" | Create new profile |
+| PUT | "/profiles/:id" | Update and existing profile |
+| DELETE | "/profiles/:id" | Delete the profile using ID |
