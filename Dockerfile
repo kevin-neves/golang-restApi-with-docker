@@ -19,7 +19,6 @@ FROM alpine:3.9
 RUN apk add ca-certificates
 
 COPY --from=build_base /tmp/golang-restApi-with-docker/out/golang-restApi-with-docker /app/golang-restApi-with-docker
-# COPY --from=build_base /tmp/golang-restApi-with-docker/.env /app/golang-restApi-with-docker
 
 EXPOSE 8080
 

@@ -3,3 +3,6 @@ build:
 
 run:
 	./out/golang-restApi-with-docker
+
+docker:
+	docker-compose up -d --build
