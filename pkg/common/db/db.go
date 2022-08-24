@@ -3,7 +3,7 @@ package db
 import (
 	"log"
 
-	"github.com/kevin-neves/go-databases/pkg/common/models"
+	"github.com/kevin-neves/golang-restApi-with-docker/pkg/common/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

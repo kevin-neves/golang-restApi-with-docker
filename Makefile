@@ -1,5 +1,5 @@
 build: 
-	cd cmd && go build -o ../out/go-databases .
+	cd cmd && go build -o ../out/golang-restApi-with-docker .
 
 run:
-	./out/go-databases
+	./out/golang-restApi-with-docker

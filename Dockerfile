@@ -3,7 +3,7 @@ FROM golang:1.19-alpine AS build_base
 RUN apk add --no-cache git
 RUN apk add --update make
 
-WORKDIR /tmp/go-databases
+WORKDIR /tmp/golang-restApi-with-docker
 
 COPY go.mod .
 COPY go.sum .
@@ -18,9 +18,9 @@ RUN make build
 FROM alpine:3.9
 RUN apk add ca-certificates
 
-COPY --from=build_base /tmp/go-databases/out/go-databases /app/go-databases
-# COPY --from=build_base /tmp/go-databases/.env /app/go-databases
+COPY --from=build_base /tmp/golang-restApi-with-docker/out/golang-restApi-with-docker /app/golang-restApi-with-docker
+# COPY --from=build_base /tmp/golang-restApi-with-docker/.env /app/golang-restApi-with-docker
 
 EXPOSE 8080
 
-CMD ["./app/go-databases"]
+CMD ["./app/golang-restApi-with-docker"]

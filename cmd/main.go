@@ -4,9 +4,9 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/kevin-neves/go-databases/pkg/common/db"
-	"github.com/kevin-neves/go-databases/pkg/common/env"
-	"github.com/kevin-neves/go-databases/pkg/profile"
+	"github.com/kevin-neves/golang-restApi-with-docker/pkg/common/db"
+	"github.com/kevin-neves/golang-restApi-with-docker/pkg/common/env"
+	"github.com/kevin-neves/golang-restApi-with-docker/pkg/profile"
 )
 
 func main() {
