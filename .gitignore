@@ -25,3 +25,6 @@
 
 # Ignore env file
 .env
+
+# Ignore tmp folder
+tmp/
