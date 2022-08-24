@@ -77,7 +77,7 @@ EXPOSE 8080
 CMD ["./app/golang-restApi-with-docker"]
 ```
 
-That way, the final container created by the image has approximately 27 MB.
+That way, the final container created by the image has approximately **27 MB**.
 
 ### Prerequisites
 
