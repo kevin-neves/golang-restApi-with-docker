@@ -77,7 +77,7 @@ In both cases, you should see something like this when running `docker ps` comma
 ```
 CONTAINER ID   IMAGE                      COMMAND                  CREATED          STATUS         PORTS                                       NAMES
 363b3388e55e   go-databases-server        "./app/golang-restAp…"   56 minutes ago   Up 8 seconds   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   golang-server
-4a8bbd2b9e99   postgres:14.5-alpine3.16   "docker-entrypoint.s…"   56 minutes ago   Up 7 seconds   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp   go-databases-db-1                                                  
+4a8bbd2b9e99   postgres:14.5-alpine3.16   "docker-entrypoint.s…"   56 minutes ago   Up 7 seconds   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp   go-databases-db-1
 ```
 
 ### Endpoints
