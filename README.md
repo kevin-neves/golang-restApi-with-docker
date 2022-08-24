@@ -46,7 +46,7 @@ The project entry point is in **cmd/main.go**.
 Following best practices, I've created the server's Dockerfile to be ran in two steps:
 
 1. Create an image, copying the project's files and building the server application
-2. Create a fresh Alpine Linux image and copying the builded project into it.
+2. Create a fresh Alpine Linux image and copying the built project into it.
 
 ```
 ## Dockerfile
